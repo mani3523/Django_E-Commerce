@@ -1,0 +1,104 @@
+/* Basic styling for layout */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.orders-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    perspective: 1000px; /* Adds depth for 3D effect */
+}
+
+/* Parallax background */
+.parallax-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('path-to-your-background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    transform: translateZ(-2px) scale(2); /* Adds a depth effect */
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* 3D Card Effect */
+.order-card {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    cursor: pointer;
+    backface-visibility: hidden;
+}
+
+/* Hover effect for 3D flip */
+.order-card:hover {
+    transform: rotateY(180deg); /* Flips the card on hover */
+}
+
+/* Inner content to display details */
+.order-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.5s;
+}
+
+/* Styling for the flipped side of the card */
+.order-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: #e9f5ff;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.order-card:hover .order-content {
+    opacity: 0;
+}
+
+.order-card:hover .order-details {
+    opacity: 1;
+}
+
+.order-details-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Parallax effect on scroll */
+.parallax {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    transform: translateZ(-1px) scale(1.5);
+}

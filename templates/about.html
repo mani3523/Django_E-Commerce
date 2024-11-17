@@ -1,0 +1,50 @@
+{% extends "main.html" %}
+{% load static %}
+{% block title %}<title>About Us</title>{% endblock title %}
+{% block content %}
+    <!-- Header Section with Parallax Background -->
+    <header class="parallax" id="header">
+        <div class="overlay">
+            <h1>About Us</h1>
+            <p>Learn more about our journey and mission</p>
+        </div>
+    </header>
+
+    <!-- About Section with Side-by-Side Containers -->
+    <section id="about-section">
+        <!-- Existing Containers -->
+        <div class="about-container">
+            <h2>Who We Are</h2>
+            <p>Founded on the principles of integrity, collaboration, and excellence, Our Company has grown from a small team with a big dream to a leading force in our industry...</p>
+        </div>
+
+        <div class="about-container">
+            <h2>Our Mission</h2>
+            <p>At Our Company, our mission is to empower and inspire through innovative solutions that make a positive impact...</p>
+        </div>
+
+        <div class="about-container">
+            <h2>Our Vision</h2>
+            <p>We envision a world where technology bridges gaps, transforms lives, and fuels progress...</p>
+        </div>
+
+        <div class="about-container">
+            <h2>Our Values</h2>
+            <p>Integrity, dedication, and innovation are at the core of everything we do...</p>
+        </div>
+
+        <!-- New Containers for "Our Story" and "Our Team" -->
+        <div class="about-container">
+            <h2>Our Story</h2>
+            <p>What started as a small idea has grown into something much bigger. Our journey has been one of passion, dedication, and the relentless pursuit of excellence. From humble beginnings to becoming a leader in our field, we've learned, adapted, and evolved with every challenge.</p>
+        </div>
+
+        <div class="about-container">
+            <h2>Our Team</h2>
+            <p>We are a diverse group of passionate individuals, each contributing their unique talents to make a difference. Together, we create innovative solutions, collaborate across departments, and build a culture of growth, support, and success.</p>
+        </div>
+    </section>
+
+    <script src="{% static "js/about.js" %}"></script>
+    <link rel="stylesheet" href="{% static "css/about.css" %}">
+{% endblock content %}

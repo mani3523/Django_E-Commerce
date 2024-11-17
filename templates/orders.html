@@ -1,0 +1,58 @@
+{% extends "main.html" %}
+{% load static %}
+{% block title %}<title>Crazykart-myorders</title>{% endblock title %}
+{% block content %}
+<div class="orders-container">
+    <h1>My Orders</h1>
+
+    <!-- Check if there are any orders -->
+    {% if orders %}
+        <!-- Loop through each order -->
+        {% for order in orders %}
+            <div class="order-card">
+                <h2>Order #{{ order.order_number }}</h2>
+                <p>Order Date: {{ order.order_date }}</p>
+                <p>Status: {{ order.status }}</p>
+                <p>Total: ₹{{ order.total }}</p>
+
+                <!-- Link to Order Details -->
+                <a href="{% url 'order_detail' order.order_number %}" class="order-details-link">View Order Details</a>
+
+                <!-- Display order items if available -->
+                {% if order.items %}
+                    <div class="order-items">
+                        <h3>Items:</h3>
+                        <ul>
+                            {% for item in order.items %}
+                                <li>
+                                    <p>Product: {{ item.product_name }}</p>
+                                    <p>Quantity: {{ item.quantity }}</p>
+                                    <p>Price: ₹{{ item.price }}</p>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% else %}
+                    <p>No items in this order.</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>You have no orders yet.</p>
+        <button type="button" class="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+            <a href="{% url 'home' %}" class="order-now-button" style="color: black; text-decoration: none;">Order Now</a>
+        </button>
+        
+    {% endif %}
+</div>
+<script>
+    // Smooth Parallax Scrolling for Background
+    document.addEventListener('scroll', function() {
+    const parallaxBg = document.querySelector('.parallax-bg');
+    const scrollPosition = window.pageYOffset;
+    parallaxBg.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+});
+</script>
+
+<link rel="stylesheet" href="{% static "css/orders.css" %}">
+{% endblock content %}

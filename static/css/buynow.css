@@ -1,0 +1,115 @@
+/* Basic styling */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+body { 
+    font-family: Arial, sans-serif; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    background: linear-gradient(to bottom, #1d1f20, #4e4f51); 
+    overflow: hidden; 
+    color: white; perspective: 1000px; 
+}
+.payment-container { 
+    text-align: center; 
+    padding: 20px; 
+    background: rgba(255, 255, 255, 0.1); 
+    border-radius: 15px; 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); 
+    transform-style: preserve-3d; 
+    transform: translateZ(-100px); 
+    animation: float 6s ease-in-out infinite; 
+}
+.parallax-bg { 
+    position: absolute; 
+    width: 200%; 
+    height: 200%; 
+    top: -50%; 
+    left: -50%; 
+    background-image: url('https://source.unsplash.com/random/1920x1080'); 
+    background-size: cover; 
+    background-attachment: fixed; 
+    z-index: -1; 
+    filter: blur(6px) brightness(0.6); 
+}
+@keyframes float 
+{ 0%, 100% 
+    { 
+        transform: translateZ(-100px) translateY(0); 
+    } 
+    50% 
+    { transform: translateZ(-100px) translateY(-10px); 
+    } 
+}
+.cancel-button {
+     padding: 15px 30px; 
+     background-color: #3b82f6; border: none; 
+     color: white; 
+     font-size: 1.2rem; 
+     font-weight: bold; 
+     border-radius: 50px; 
+     cursor: pointer; 
+     box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2); 
+     transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    }
+.cancel-button:hover { 
+    transform: translateY(-5px) scale(1.05); 
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.3); 
+}
+
+.buy-button {
+    padding: 15px 30px; 
+    background-color: #3b82f6; border: none; 
+    color: white; 
+    font-size: 1.2rem; 
+    font-weight: bold; 
+    border-radius: 50px; 
+    cursor: pointer; 
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+   }
+.buy-button:hover { 
+   transform: translateY(-5px) scale(1.05); 
+   box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.3); 
+}
+
+h1 { 
+    font-size: 2rem; 
+    margin-bottom: 1rem; 
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); 
+}
+p { 
+    font-size: 1rem; 
+    margin-bottom: 2rem; 
+    opacity: 0.8; 
+}
+
+.no-orders {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.no-orders p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.order-now-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #3b82f6;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.order-now-button:hover {
+    background-color: #2563eb;
+}

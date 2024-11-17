@@ -1,0 +1,160 @@
+{% extends "main.html" %} 
+{% load static %}
+{% block content %}
+<style>
+    .burn{
+        background-image: url("{% static 'images/fire.gif' %}");
+        background-size: cover;
+        background-position: center;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        text-align: center;
+    }
+</style>
+<header>
+    <!-- Marquee for Special Offer -->
+    <marquee style="font-size: 24px; color: red; font-weight: bold;">
+        Last Day to Get the Offer! Don't Miss Out on Huge Discounts!
+    </marquee>
+    <h1 class="burn">Crazy Deals on iPhones</h1>
+    <p style="text-align: center;">🚨 Unbeatable iPhones Deals Alert! 🚨
+        Get the best iPhones at jaw-dropping prices – don’t miss out on this limited-time offer! 🔥</p>
+</header>
+<div class="container my-5">
+    <div class="container my-5">
+        <div class="row">
+            <!-- product1 -->
+            <div class="col-md-3 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="{% static 'images/iphone1.webp' %}" class="card-img-top" alt="iphones">
+                    <div class="card-body">
+                        <h5 class="card-title">iPhone16 Ultramarine 128 GB</h5>
+                        <p class="card-text text-success">$799</p>
+                        <button type="button" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                            <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                            <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+                            </svg>
+                            <a href="{% url "buynow" %}" style="color: white;">Buy now</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- product2 -->
+            <div class="col-md-3 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="{% static 'images/iphone2.webp' %}" class="card-img-top" alt="iphones">
+                    <div class="card-body">
+                        <h5 class="card-title">iPhone16 Pink 128 GB</h5>
+                        <p class="card-text text-success">$799</p>
+                        <button type="button" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                            <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                            <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+                            </svg>
+                            <a href="{% url "buynow" %}" style="color: white;">Buy now</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- product3 -->
+            <div class="col-md-3 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="{% static 'images/iphone3.webp' %}" class="card-img-top" alt="iphones">
+                    <div class="card-body">
+                        <h5 class="card-title">iPhone16 Black 128 GB</h5>
+                        <p class="card-text text-success">$799</p>
+                        <button type="button" class="text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                            <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                            <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+                            </svg>
+                            <a href="{% url "buynow" %}" style="color: white;">Buy now</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- product4 -->
+            <div class="col-md-3 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="{% static 'images/iphone4.jpg' %}" class="card-img-top" alt="iphones">
+                    <div class="card-body">
+                        <h5 class="card-title">iPhone16 White 128 GB</h5>
+                        <p class="card-text text-success">$799</p>
+                        <button type="button" class="text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800">
+                            <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                            <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+                            </svg>
+                            <a href="{% url "buynow" %}" style="color: white;">Buy now</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- product5 -->
+            <div class="col-md-3 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="{% static 'images/iphone pro1.webp' %}" class="card-img-top" alt="iphones">
+                    <div class="card-body">
+                        <h5 class="card-title">iPhone16 Pro Desert Titanium 128 GB</h5>
+                        <p class="card-text text-success">$999</p>
+                        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                            <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+                            </svg>
+                            <a href="{% url "buynow" %}" style="color: white;">Buy now</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- product6 -->
+            <div class="col-md-3 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="{% static 'images/iphone pro1.webp' %}" class="card-img-top" alt="iphones">
+                    <div class="card-body">
+                        <h5 class="card-title">iPhone16 Pro Max Desert Titanium 256GB</h5>
+                        <p class="card-text text-success">$1499</p>
+                        <button type="button" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                            <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                            <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+                            </svg>
+                            <a href="{% url "buynow" %}" style="color: white;">Buy now</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- product7 -->
+            <div class="col-md-3 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="{% static 'images/iphone plus.webp' %}" class="card-img-top" alt="iphones">
+                    <div class="card-body">
+                        <h5 class="card-title">iPhone16 plus Green 256 GB</h5>
+                        <p class="card-text text-success">$1199</p>
+                        <button type="button" class="text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                            <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                            <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+                            </svg>
+                            <a href="{% url "buynow" %}" style="color: white;">Buy now</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- product8 -->
+            <div class="col-md-3 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="{% static 'images/iphones.png' %}" class="card-img-top" alt="iphones">
+                    <div class="card-body">
+                        <h5 class="card-title">iPhone16 128 GB</h5>
+                        <p class="card-text text-success">$799</p>
+                        <button type="button" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                            <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                            <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+                            </svg>
+                            <a href="{% url "buynow" %}" style="color: white; ">Buy now</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+<!-- External CSS and JS -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

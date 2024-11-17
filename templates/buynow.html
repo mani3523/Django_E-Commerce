@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now (Test Mode)</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <link rel="stylesheet" href="{% static "css/buynow.css" %}">
+</head>
+<body>
+    <div class="parallax-bg"></div>
+    <div class="payment-container">
+        <h1>Complete Your Purchase (Test Mode)</h1>
+        <p>Click the button below to simulate a secure payment in test mode.{{amount}}</p>
+        
+        <!-- Buy and Cancel Buttons -->
+        <button class="buy-button" onclick="openRazorpay()">Buy Now</button>
+        <button class="cancel-button" onclick="cancelRazorpay()">Cancel</button>
+    </div>
+
+    <script>
+        var rzp;  // Declare Razorpay instance variable globally
+        var isRzpOpen = false;  // Flag to track if Razorpay modal is open
+
+        function openRazorpay() {
+            var options = {
+                "key": "{{ razorpay_key }}",  // Test API Key from Django context
+                "amount": "{{ amount }}",  // Amount in smallest currency unit
+                "currency": "USD",
+                "name": "Test Company",
+                "description": "Test Transaction",
+                "image": "{% static 'images/logo.png' %}",  // Add your logo URL
+                "order_id": "{{ razorpay_order_id }}",  // Order ID from Razorpay order
+                "handler": function(response) {
+                    isRzpOpen = false;  // Close flag on successful payment
+                    alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+                    
+                    // Redirect to homepage after successful payment
+                    window.location.href = "{% url 'home' %}";  // Replace with your home page URL if different
+                },
+                "prefill": {
+                    "name": "{{user.username}}",
+                    "email": "{{user.email}}",
+                    "contact": "{{user.phone}}"
+                },
+                "theme": {
+                    "color": "#3b82f6"
+                }
+            };
+            rzp = new Razorpay(options);
+            rzp.on('payment.failed', function (response) {
+                isRzpOpen = false;  // Close flag on payment failure
+                alert("Payment Failed: " + response.error.description);
+            });
+            
+            isRzpOpen = true;  // Set flag to indicate Razorpay is open
+            rzp.open();  // Open the Razorpay modal
+        }
+
+        function cancelRazorpay() {
+            if (isRzpOpen && rzp) {
+                rzp.close();  // Close the Razorpay modal if open
+                isRzpOpen = false;  // Reset the flag
+            } else {
+                alert("Payment modal is not open.");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+<style>
+    .burn {
+        background-image: url("{% static 'images/fire.gif' %}");
+        background-size: cover;
+        background-position: center;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        text-align: center;
+    }
+  
+    /* Set product cards to same size and align button at the bottom */
+    .product-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Push the content to the top, button to the bottom */
+    }
+  
+    /* Ensure uniform card height */
+    .product-card img {
+        object-fit: cover;
+        height: 200px; /* Adjust height as needed */
+    }
+  
+    /* Ensure card text does not overflow and push button to the bottom */
+    .card-body {
+        flex-grow: 1; /* Allow the card body to take up remaining space */
+    }
+  
+    /* Style the 'Get More' links and position them at the bottom of the card */
+    .product-card a {
+        color: white;  /* White text */
+        text-decoration: none;  /* No underline */
+        margin-top: auto;  /* Push the button to the bottom */
+    }
+  
+    .product-card a:hover {
+        text-decoration: none;  /* Remove underline on hover */
+    }
+  </style>
+  
+    <header>
+      <!-- Marquee for Special Offer -->
+      <marquee style="font-size: 24px; color: red; font-weight: bold;">
+          Last Day to Get the Offer! Don't Miss Out on Huge Discounts!
+      </marquee>
+    </header>
+    <!-- Image Slider (Swiper) -->
+    <section id="slider-details" class="slider-details">
+      <div class="container">
+        <!-- Ensure this Swiper container has the correct class -->
+        <div class="slider-details-slider swiper">
+          <div class="swiper-wrapper">
+            <!-- Swiper Slide 1 -->
+            <div class="swiper-slide">
+              <img src="{% static 'images/banner4.jpg' %}" alt="banner4">
+            </div>
+            <!-- Swiper Slide 2 -->
+            <div class="swiper-slide">
+              <img src="{% static 'images/banner5.jpg' %}" alt="banner5">
+            </div>
+            <!-- Swiper Slide 3 -->
+            <div class="swiper-slide">
+              <img src="{% static 'images/banner6.jpg' %}" alt="banner6">
+            </div>
+        </div>
+        <!-- Pagination for Swiper -->
+        <div class="slider-details-pagination swiper-pagination"></div>
+      </div>
+    </div>
+    </section>
+
+    <!-- Main content -->
+    <main class="container">
+      <center><h1>Welcome to Crazykart</h1></center>
+    </main>
+    <div class="container mt-5">
+      <h1 class="text-center mb-4">Our Products</h1>
+      <div class="row g-4">
+          <!-- Product 1 -->
+          <div class="col-md-4">
+              <div class="card product-card">
+                  <img src="{% static "images/product1.avif" %}" alt="Product 1" class="card-img-top">
+                  <div class="card-body">
+                      <h5 class="product-title">Iphone 16</h5>
+                      <p class="card-text">This is a short description of the product. It's an amazing product with great features.</p>
+                      <p class="product-price">$1299.99</p>
+                      <a href="{% url "iphones" %}" type="button" class="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Get More</a>
+                  </div>
+              </div>
+          </div>
+          <!-- Product 2 -->
+          <div class="col-md-4">
+              <div class="card product-card">
+                  <img src="{% static "images/product2.jpg" %}" alt="Product 2" class="card-img-top">
+                  <div class="card-body">
+                      <h5 class="product-title">Android Mobiles</h5>
+                      <p class="card-text">This product offers high quality and performance. Ideal for your everyday needs.</p>
+                      <p class="product-price">$1339.99</p>
+                      <a href="{% url "phones" %}" type="button" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Get More</a>
+                  </div>
+              </div>
+          </div>
+          <!-- Product 3 -->
+          <div class="col-md-4">
+              <div class="card product-card">
+                  <img src="{% static "images/product3.jpg" %}" alt="Product 3" class="card-img-top">
+                  <div class="card-body">
+                      <h5 class="product-title">Gaming Laptops</h5>
+                      <p class="card-text">Discover this fantastic product with exceptional features and an affordable price.</p>
+                      <p class="product-price">$1499.99</p>
+                      <a href="{% url "laptops" %}" type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Get More</a>
+                  </div>
+              </div>
+          </div>
+          <!-- Product 4 -->
+          <div class="col-md-4">
+              <div class="card product-card">
+                  <img src="{% static "images/product4.webp" %}" alt="Product 4" class="card-img-top">
+                  <div class="card-body">
+                      <h5 class="product-title">Fashion Brands</h5>
+                      <p class="card-text">This product is known for its durability and advanced technology. A must-have item.</p>
+                      <p class="product-price">$159.99</p>
+                      <a href="{% url "dress" %}" type="button" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Get More</a>
+                  </div>
+              </div>
+          </div>
+          <!-- Product 5 -->
+          <div class="col-md-4">
+              <div class="card product-card">
+                  <img src="{% static "images/product5.avif" %}" alt="Product 5" class="card-img-top">
+                  <div class="card-body">
+                      <h5 class="product-title">Grocery</h5>
+                      <p class="card-text">A fantastic product with sleek design and powerful features. Perfect for daily use.</p>
+                      <p class="product-price">$69.99</p>
+                      <a href="{% url "grocery" %}" type="button" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Get More</a>
+                  </div>
+              </div>
+          </div>
+          <!-- Product 6 -->
+          <div class="col-md-4">
+              <div class="card product-card">
+                  <img src="{% static "images/product6.webp" %}" alt="Product 6" class="card-img-top">
+                  <div class="card-body">
+                      <h5 class="product-title">Sports shoes</h5>
+                      <p class="card-text">This product provides excellent value with high-quality materials and craftsmanship.</p>
+                      <p class="product-price">$179.99</p>
+                      <a href="{% url "shoes" %}" type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Get More</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+</br>
+</br>
+<link rel="stylesheet" href="{% static "css/home1.css" %}">
+{% endblock content %} 
